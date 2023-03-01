@@ -1,4 +1,4 @@
-package com.kafka.springbootkafkaproducer.service;
+package com.kafka.springkafka.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -12,6 +12,6 @@ public class HomeServiceImpl {
 
 
     public void publishMessageToKafka(String message){
-        kafkaTemplate.send("test1",message);
+        kafkaTemplate.send("teststr",message);
     }
 }

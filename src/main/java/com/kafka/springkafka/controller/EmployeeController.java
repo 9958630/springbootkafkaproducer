@@ -1,9 +1,9 @@
-package com.kafka.springbootkafkaproducer.controller;
+package com.kafka.springkafka.controller;
 
-import com.kafka.springbootkafkaproducer.model.Employee;
-import com.kafka.springbootkafkaproducer.service.EmployeeServiceImpl;
+import com.kafka.springkafka.model.Employee;
+import com.kafka.springkafka.model.MyCustomEvent;
+import com.kafka.springkafka.service.EmployeeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,9 +17,9 @@ public class EmployeeController {
     private EmployeeServiceImpl employeeService;
 
     @PostMapping("/sendEmployee")
-    public void sendEmployeeObjects(@RequestBody Employee employee){
-        if(Objects.nonNull(employee))
-        employeeService.sendObjTokafka(employee);
+    public void sendEmployeeObjects(@RequestBody MyCustomEvent myCustomEvent) {
+        if(Objects.nonNull(myCustomEvent))
+        employeeService.sendObjTokafka(myCustomEvent);
     }
 
 

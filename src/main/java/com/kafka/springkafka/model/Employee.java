@@ -1,7 +1,8 @@
-package com.kafka.springbootkafkaproducer.model;
+package com.kafka.springkafka.model;
 
 
-public class Employee {
+
+public class Employee{
     private int empID;
     private String empName;
     private String empAddr;
